@@ -15,10 +15,21 @@ const register = async (req, res) => {
       const contraseñaHasheada = await bcrypt.hash(password, 10); 
 
       const nuevoUsuario = new User({
+        name : req.body.name,
+        surname: req.body.surname,
         email, 
         password: contraseñaHasheada,
-        birthdate
+        birthdate,
+        address: {
+          postalCode: req.body.address.postalCode,
+          city: req.body.address.city,
+          province: req.body.address.province,
+          country: req.body.address.country,
+          street: req.body.address.street,
+          streetNumber: req.body.address.streetNumber
+        }
       });
+      
 
       const usuarioGuardado = await nuevoUsuario.save();
       console.log (usuarioGuardado)
