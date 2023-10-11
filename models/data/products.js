@@ -36,3 +36,4 @@ let products = [
 ]
 
 Product.insertMany(products)
+

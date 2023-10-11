@@ -18,3 +18,4 @@ router.post('/register', findEmail, validator(userSchema), hasheador, register);
 router.post("/signIn", validator(userValidator), findUser, findPassword, createToken, signIn)
 router.post("/signOut",passport.authenticate('jwt',{session: false}),signOut)
 export default router;
+
