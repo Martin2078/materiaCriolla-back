@@ -1,4 +1,4 @@
-import Products from '../products.js'
+import Product from '../Product.js'
 import 'dotenv/config.js'
 import '../../config/database.js'
 
@@ -35,4 +35,5 @@ let products = [
     }
 ]
 
-Products.insertMany(products)
+Product.insertMany(products)
+
