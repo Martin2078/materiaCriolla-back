@@ -18,3 +18,4 @@ router.post('/register', findEmail, validator(userSchema), hasheador, register);
 router.post("/signIn", validator(userValidator), findUser, findPassword, findToken, signinController)
 
 export default router;
+
