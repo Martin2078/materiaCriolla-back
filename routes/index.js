@@ -1,9 +1,13 @@
-import express from 'express';
-const router = express.Router();
+import {Router} from 'express';
+import productsRouter from './products.js'
+import categoryRouter from './category.js';
+const router = Router();
 
-/* GET home page. */
 router.get('/', function (req, res, next) {
   res.render('index', { title: 'Express' });
 });
+
+router.use("/products", productsRouter)
+router.use("/categorys",categoryRouter)
 
 export default router;
