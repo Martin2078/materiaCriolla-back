@@ -1,7 +1,6 @@
-import User from "../models/User.js";
 import jwt from "jsonwebtoken";
 
-async function findToken(res, req, next) {
+async function findToken(req,res,next) {
 
 
     const { email, _id } = req.body || req.user

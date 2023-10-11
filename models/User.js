@@ -8,14 +8,14 @@ const userSchema = new Schema({
   password: { type: String, required: true },
   photo: { type: String, required: false },
   online: { type: Boolean, default: false },
-  address: {
+  address: [{
     postalCode: { type: Number },
     city: { type: String },
     province: { type: String },
     country: { type: String },
     street: { type: String },
     streetNumber: { type: Number },
-  },
+  }],
   birthdate: { type: Date, required: true },
   lastBuys: [{
     state: { type: String},

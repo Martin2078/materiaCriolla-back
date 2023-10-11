@@ -1,22 +1,16 @@
 // middlewares de usuario, comprueba que el usario exista//
+import User from '../models/User.js'
 
-import User from "../models/User.js";
-
-async function findUser(req, res, next) {
-
+export default async function (req,res,next) {
     try {
-        const user = await User.findOne({ email: req.body.email });
-        if (!user) {
-            return res.status(401).json({ error: 'Credenciales incorrectas' });
-
+        const finded = await User.findOne({ email:req.body.email })
+        if (!finded) {
+            return res.status(401).json({ error: 'Email incorrecto'});
         }
-        console.log("findUser")
-
-        return
-        next()
+        return next()
 
     } catch (error) {
         res.status(500).json({ message: "Error interno del servidor" });
     }
 }
-export default findUser
+
