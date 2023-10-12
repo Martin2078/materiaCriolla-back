@@ -10,7 +10,7 @@ async function findPassword(req,res,next) {
     }
     return res.status(400).json({
         sucess: false,
-        message: "wrong password",
+        error: "wrong password",
         response: null
     })
 
