@@ -2,8 +2,8 @@ import { Schema, model, Types } from 'mongoose';
 
 let collection = 'users'
 const userSchema = new Schema({
-  name:{type:String, required: false},
-  surname : {type:String, required:false},
+  name:{type:String, required: true},
+  surname : {type:String, required:true},
   email: { type: String, required: true },
   password: { type: String, required: true },
   photo: { type: String, required: false },
