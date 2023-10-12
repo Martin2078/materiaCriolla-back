@@ -11,14 +11,14 @@ import createToken from '../middlewares/createToken.js';
 import signIn from '../controllers/auth/signIn.js'
 import passport from '../middlewares/passport.js'
 import signOut from '../controllers/auth/signOut.js'
-import updateUserAddress from '../controllers/auth/updateUserAddress.js';
-import userAddressValidator from '../validators/userAddressValidator.js'
+import updateUserInfo from '../controllers/auth/updateUserInfo.js';
+import userInfoValidator from '../validators/userInfoValidator.js'
 
 const router = Router();
 
 router.post('/register', findEmail, validator(userSchema), hasheador, register);
 router.post("/signIn", validator(userValidator), findUser, findPassword, createToken, signIn)
 router.post("/signOut",passport.authenticate('jwt',{session: false}),signOut)
-router.put("/:id",passport.authenticate('jwt',{session:false}),validator(userAddressValidator),updateUserAddress)
+router.put("/:id",passport.authenticate('jwt',{session:false}),validator(userInfoValidator),updateUserInfo)
 export default router;
 

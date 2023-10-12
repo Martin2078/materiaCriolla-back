@@ -33,6 +33,25 @@ let userValidator = joi.object({
         'number.min': 'Postal code must contain almost 2 character',
         'any.number':"Please use numbers!"
     }),
+    name: joi.string().min(3).required().messages({
+        'any.required': 'Please insert your name!',
+        'string.empty': 'Please insert your name!',
+        'string.min': 'Name must contain almost 3 character'
+    }),
+    surname: joi.string().min(2).required().messages({
+        'any.required': 'Please insert your surname!',
+        'string.empty': 'Please insert your surname!',
+        'string.min': 'Surname must contain almost 2 character'
+    }),
+    email: joi.string().email().required().messages({
+        'any.required': 'Email Required!',
+        'string.empty': 'Please insert your email direction!',
+        'string.email': 'Email must contain @xxxx.com'
+    }),
+    birthdate: joi.date().required().messages({
+        'any.date':'Please insert a valid date!',
+    })
+    
 
 })
 
