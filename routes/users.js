@@ -16,7 +16,7 @@ import userInfoValidator from '../validators/userInfoValidator.js'
 
 const router = Router();
 
-router.post('/register', findEmail, validator(userSchema), hasheador, register);
+router.post('/register', findEmail, validator(userSchema), register);
 router.post("/signIn", validator(userValidator), findUser, findPassword, createToken, signIn)
 router.post("/signOut",passport.authenticate('jwt',{session: false}),signOut)
 router.put("/:id",passport.authenticate('jwt',{session:false}),validator(userInfoValidator),updateUserInfo)
