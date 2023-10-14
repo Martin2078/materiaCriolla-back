@@ -6,7 +6,7 @@ let schema = new Schema({
     description: { type: String, required: true },
     price: { type: Number, required: true },
     quantity: { type: Number, required: true },
-    product_photo: { type: String, required: true },
+    product_photo: [{ type: String, required: true }],
     colors: [{ type: String, required: true }],
     user_id: { type: Types.ObjectId, ref: 'users', required: true },
     category_id: { type: Types.ObjectId, required: true },
