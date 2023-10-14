@@ -1,0 +1,1 @@
+export const createOrder2 = (req,res) => res.send('creating order')
