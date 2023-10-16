@@ -8,6 +8,7 @@
     "dev": "nodemon ./bin/www"
   },
   "dependencies": {
+    "axios": "^1.5.1",
     "bcrypt": "^5.1.1",
     "bcryptjs": "^2.4.3",
     "cookie-parser": "~1.4.4",
@@ -19,6 +20,7 @@
     "joi": "^17.11.0",
     "joi-oid": "^1.1.2",
     "jsonwebtoken": "^9.0.2",
+    "mercadopago": "^1.5.17",
     "mongoose": "^7.6.1",
     "morgan": "~1.9.1",
     "nodemailer": "^6.9.6",
