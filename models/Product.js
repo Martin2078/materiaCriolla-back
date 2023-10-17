@@ -9,7 +9,7 @@ let schema = new Schema({
     product_photo: [{ type: String, required: true }],
     colors: [{ type: String, required: true }],
     user_id: { type: Types.ObjectId, ref: 'users', required: true },
-    category_id: { type: Types.ObjectId, required: true },
+    category_id: { type: Types.ObjectId, required: true, ref: 'categories' },
     Bestsellers:{ type: Number, default:0}
 }, {
     timestamps: true
