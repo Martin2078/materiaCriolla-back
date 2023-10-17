@@ -8,6 +8,7 @@ const userSchema = new Schema({
   password: { type: String, required: true },
   photo: { type: String, required: false },
   online: { type: Boolean, default: false },
+  role:{type: Number,default:0},
   address: {
     postalCode: { type: Number },
     city: { type: String },
@@ -23,7 +24,10 @@ const userSchema = new Schema({
   }],
   verified: { type: Boolean, default: false }, 
   verify_code: { type: String },
-  checkout: [{ type: Types.ObjectId, ref: 'products' }]
+  checkout: [{
+    quantity:{type: Number},
+    product_id:{type: Types.ObjectId,required: true, ref: 'products'}
+  }]
 }, {
   timestamps: true,
 });
