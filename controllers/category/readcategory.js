@@ -1,4 +1,4 @@
-import Category from "../../models/category.js"
+import Category from "../../models/Category.js"
 const readCategory = async(req,res) => {
     
     try {
