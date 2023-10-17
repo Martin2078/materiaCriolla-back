@@ -5,7 +5,7 @@ export default async function (req,res,next) {
     try {
         const finded = await User.findOne({ email:req.body.email })
         if (!finded) {
-            return res.status(401).json({ error: 'Email incorrecto'});
+            return res.status(401).json({ error: 'Wrong email'});
         }
         return next()
 
