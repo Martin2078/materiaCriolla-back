@@ -4,7 +4,6 @@ export default async (req,res) => {
     try {
         let products = await Product.find()
             .sort({ Bestsellers: 1 })
-            .select('-_id')
             .populate({path:'category_id'})
         res.json({
             success: true,
