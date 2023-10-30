@@ -7,7 +7,7 @@ import logger from 'morgan';
 import cors from 'cors'
 
 import indexRouter from './routes/index.js';
-import usersRouter from './routes/users.js';
+
 import { __dirname } from './utils/utils.js';
 
 const app = express();
@@ -20,6 +20,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+
+
 
 export default app;
