@@ -23,9 +23,8 @@ export default async function updateUserInfo(req,res) {
         user.surname=surname
         user.birthdate=birthdate
         user.email=email
-
+        user.populate("checkout.product_id")   
         await user.save()
-
         return res.status(200).json({
             response:{user},
             message:"User updated!"
